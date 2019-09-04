@@ -21,8 +21,9 @@ public:
     void Inicializar();
     void Imprimir_matrix();
     void Verificar_matrix();
-    void ObtenerPorcentaje( );
-    Matriz &operator+(Matriz &);
+    void ObtenerPorcentaje();
+    void ObtenerMultiplicación();
+    Matriz &operator+(const Matriz &);
     Matriz &operator=(const Matriz& );
     ~Matriz();
 

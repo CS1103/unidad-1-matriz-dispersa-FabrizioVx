@@ -48,12 +48,13 @@ void Matriz::Imprimir_matrix() {
 void Matriz::Verificar_matrix() {
     for (int i = 0; i < filas; ++i) {
         for (int j = 0; j < columnas; ++j) {
-            if(i == j || ((j > i) && (matrix[i][j] < matrix[3][3] )) || ((i > j) && (matrix[i][j] < matrix[3][3] )) ){
-                if(matrix[i][j] == 0){
+            if(i == j || ((j > i) && (matrix[i][j] < matrix[0][0] )) || ((i > j) && (matrix[i][j] < matrix[0][02] )) ){
+
+                if(matrix[i][j] != 0){
                     contador++;
                 }
             }
-                else if(matrix[i][j] == 0){
+                else if(matrix[i][j] != 0){
                     contador++;
                 }
             }
@@ -76,7 +77,7 @@ Matriz::~Matriz() {
     for (int i = 0; i < filas ; ++i) {
         delete [] matrix[i];
     }
-    delete matrix;
+    delete[] matrix;
 }
 
 
@@ -86,22 +87,31 @@ void Matriz::ObtenerPorcentaje() {
     cout<<"Porcentaje: "<<porcentaje<<"%";
 }
 
-Matriz &Matriz::operator+(Matriz &one) {
-    Matriz *aux = nullptr;
-    for(int i = 0;i<filas;i++){
-        for(int j = 0;j<columnas;j++) {
-            aux->matrix[i][j] = matrix[i][j] + one.matrix[i][j];
+Matriz &Matriz::operator+(const Matriz &right) {
+    for (int i = 0; i < filas; ++i) {
+        for (int j = 0; j < columnas; ++j) {
+            matrix[i][j] = matrix[i][j] + right.matrix[i][j];
+        }
+    }
+    //Matriz aux(one);
+    return *this;
+}
+
+Matriz &Matriz::operator=(const Matriz & r) {
+    for (int i = 0; i < filas; ++i) {
+        for (int j = 0; j < columnas; ++j) {
+            matrix[i][j] =  r.matrix[i][j];
         }
     }
     return *this;
 }
 
-Matriz &Matriz::operator=(const Matriz & n) {
-    std::cout<<"Constructor por asignacion\n";
+
+    /*std::cout<<"Constructor por asignacion\n";
     for(int i = 0; i <filas;i++){
         for (int j = 0; j < columnas; ++j) {
             matrix[i][j] = n.matrix[i][j];
         }
-    }
-    return *this; //puntero de si mismo
-}
+    }*/
+    //return *this; //puntero de si mismo
+//}
