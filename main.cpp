@@ -12,9 +12,12 @@ int main() {
     auto *matriz3 = new Matriz(filas,columnas);
     auto *matriz4 = new Matriz(filas,columnas);
     auto * matriz5 = new Matriz(filas,columnas);
-
+    auto * matriz6 = new Matriz(filas,columnas);
+    auto * matriz7 = new Matriz(filas,columnas);
+    auto * matriz8 = new Matriz(filas,columnas);
 
     //Operaciones matriz 1
+    cout<<"Matriz 1";
     matriz1->Malloc_memory(filas,columnas);
     matriz1->Inicializar();
     matriz1->Verificar_matrix();
@@ -22,36 +25,56 @@ int main() {
     cout<<endl;
 
 
-    //Operaciones matriz 1
+    //Operaciones matriz 2
+    cout<<"Matriz 2";
     matriz2->Malloc_memory(filas,columnas);
     matriz2->Inicializar();
     matriz2->Verificar_matrix();
     matriz2->Imprimir_matrix();
+    cout<<endl;
 
+
+    //Operaciones matriz 3
+    cout<<"Matriz 3";
     matriz3->Malloc_memory(filas,columnas);
     cout<<endl;
     *matriz3 = *matriz2 + *matriz1;
     matriz3->Imprimir_matrix();
     matriz3->Verificar_matrix();
 
-    matriz4->Malloc_memory(filas,columnas);
+
+    //Operaciones matriz 4
+    cout<<endl<<endl<<endl<<endl;
+    cout<<"Matriz 4"<<"\n";
+    matriz6->Malloc_memory(filas,columnas);
+    matriz5->Malloc_memory(filas,columnas);
+    matriz7->Malloc_memory(filas,columnas);
+    matriz5->Inicializar();
+    matriz6->Inicializar();
+    matriz5->Imprimir_matrix();
     cout<<endl;
-    *matriz4 = (*matriz1)*(*matriz2);
-    matriz4->Imprimir_matrix();
-    matriz4->Verificar_matrix();
+    matriz6->Imprimir_matrix();
+    *matriz7=*matriz5**matriz6;
+    cout<<endl;
+    matriz7->Imprimir_matrix();
 
+    cout<<endl;
+    matriz8->Malloc_memory(filas,columnas);
+    matriz8->Inicializar();
+    matriz8->Imprimir_matrix();
+    matriz8->ObtenerMultiplicacion_Escalar(4);
 
-    cout<<endl<<endl<<endl;
+    cout<<"\n\n";
+    matriz8->ObtenerTransposicion(*matriz8);
+    matriz8->Imprimir_matrix();
+    //Operaciones matriz 5
+    /*cout<<"Matriz 5"<<"\n";
     matriz5->Malloc_memory(filas,columnas);
     matriz5->Inicializar();
-    matriz5->Verificar_matrix();
+    matriz5->Imprimir_matrix();
 
-    matriz5->Imprimir_matrix();
     cout<<endl<<endl<<endl;
-    matriz5->Imprimir_matrix();
-    matriz5->ObtenerTransposicion(*matriz5);
-    cout<<endl;
-    matriz5->Imprimir_matrix();
+   */
 
 
 
@@ -59,10 +82,7 @@ int main() {
     delete matriz2;
     delete matriz3;
     delete matriz4;
-
-
-    cout<<endl;
-
+    //delete matriz5;
 
 
     /*unsigned int filas, columnas;

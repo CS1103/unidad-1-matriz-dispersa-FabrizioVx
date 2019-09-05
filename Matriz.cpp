@@ -107,22 +107,23 @@ Matriz &Matriz::operator=(const Matriz & r) {
 }
 
 Matriz &Matriz::operator*(const Matriz & r) {
-
+    auto * matrix_sumador = new Matriz(r);
     for (int i = 0; i < filas  ; ++i) {
         for (int j = 0; j < columnas ; ++j) {
             for (int k = 0; k < columnas ; ++k) {
-                this->matrix[i][j] = r.matrix[i][j] + r.matrix[i][k] * r.matrix[k][j];
+                matrix_sumador->matrix[i][j] = matrix_sumador->matrix[i][j] + this->matrix[i][k] * this->matrix[k][j];
             }
         }
     }
-    return *this;
+    return *matrix_sumador;
 
 }
 
 void Matriz::ObtenerTransposicion(const Matriz &r) {
+    auto * matrix_transposicion = new Matriz(r);
     for (unsigned int i = 0; i < r.filas; i++) {
         for (unsigned int j = 0; j < r.columnas ; j++) {
-            matrix[j][i] = r.matrix[i][j];
+            matrix[i][j] = matrix_transposicion->matrix[j][i];
         }
     }
 }
@@ -140,10 +141,11 @@ for(int i = 0; i <filas;i++){
 }*/
     //return *this; //puntero de si mismo
 //}
-void Matriz::ObtenerMultiplicacion_Escalar(const Matriz & r,int n) {
+void Matriz::ObtenerMultiplicacion_Escalar(int n) {
     for (int i = 0; i < filas; ++i) {
         for (int j = 0; j < columnas; ++j) {
-            matrix[i][j] = n * r.matrix[i][j];
+            this->matrix[i][j] = n * this->matrix[i][j];
         }
     }
 }
+
