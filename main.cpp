@@ -36,8 +36,8 @@ int main() {
 
     //Operaciones matriz 3
     cout<<"Matriz 3";
+    cout<<"\nOPERACION SUMA\n";
     matriz3->Malloc_memory(filas,columnas);
-    cout<<endl;
     *matriz3 = *matriz2 + *matriz1;
     matriz3->Imprimir_matrix();
     matriz3->Verificar_matrix();
@@ -46,6 +46,8 @@ int main() {
     //Operaciones matriz 4
     cout<<endl<<endl<<endl<<endl;
     cout<<"Matriz 4"<<"\n";
+    cout<<"OPERACION MULTIPLICACION\n";
+
     matriz6->Malloc_memory(filas,columnas);
     matriz5->Malloc_memory(filas,columnas);
     matriz7->Malloc_memory(filas,columnas);
@@ -54,19 +56,23 @@ int main() {
     matriz5->Imprimir_matrix();
     cout<<endl;
     matriz6->Imprimir_matrix();
-    *matriz7=*matriz5**matriz6;
+    *matriz7=(*matriz5)*(*matriz6);
     cout<<endl;
     matriz7->Imprimir_matrix();
 
     cout<<endl;
+
+    cout<<"MATRIZ 5\n";
+    cout<<"OPERACION MULTIPLICACION ESCALAR\n";
     matriz8->Malloc_memory(filas,columnas);
     matriz8->Inicializar();
     matriz8->Imprimir_matrix();
     matriz8->ObtenerMultiplicacion_Escalar(4);
-
-    cout<<"\n\n";
-    matriz8->ObtenerTransposicion(*matriz8);
+    cout<<endl;
     matriz8->Imprimir_matrix();
+    cout<<"\n\n";
+
+
     //Operaciones matriz 5
     /*cout<<"Matriz 5"<<"\n";
     matriz5->Malloc_memory(filas,columnas);
@@ -82,6 +88,10 @@ int main() {
     delete matriz2;
     delete matriz3;
     delete matriz4;
+    delete matriz5;
+    delete matriz6;
+    delete matriz7;
+    delete matriz8;
     //delete matriz5;
 
 

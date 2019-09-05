@@ -50,11 +50,11 @@ void Matriz::Verificar_matrix() {
         for (int j = 0; j < columnas; ++j) {
             if(i == j || ((j > i) && (matrix[i][j] < matrix[0][0] )) || ((i > j) && (matrix[i][j] < matrix[0][02] )) ){
 
-                if(matrix[i][j] != 0){
+                if(matrix[i][j] == 0){
                     contador++;
                 }
             }
-                else if(matrix[i][j] != 0){
+                else if(matrix[i][j] == 0){
                     contador++;
                 }
             }
