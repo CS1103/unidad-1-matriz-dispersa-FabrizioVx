@@ -24,7 +24,7 @@ public:
     void Imprimir_matrix();                         //Muestra la matriz en pantalla
     void Verificar_matrix();                        //Verifica la matriz
     void ObtenerPorcentaje();                       //Obtiene el porcentaje de la matriz con cantidad cero
-    void ObtenerMultiplicacion_Escalar( int);    //Multiplicacion por un numero culquiera a la matriz
+    void ObtenerMultiplicacion_Escalar( int);       //Multiplicacion por un numero culquiera a la matrizw
     void ObtenerTransposicion(const Matriz &);      //Pasar filas a columnas y de columnas a filas
 
 
